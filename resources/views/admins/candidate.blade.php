@@ -39,7 +39,7 @@
                 <td>{{$candidate->name}}</td>
                 <td>{{$candidate->email}}</td>
                 <td>{{$candidate->birthday->format('j F, Y')}}</td>
-                <td><a href="/admin/candidate/{{$candidate->id}}/editCandidate" class="btn btn-secondary btn-sm">Edit</a><a href="#" class="btn btn-danger btn-sm ml-1">Delete</a></td>
+                <td><a href="/admin/candidates/{{$candidate->id}}/editCandidate" class="btn btn-secondary btn-sm">Edit</a><a href="#" class="btn btn-danger btn-sm ml-1">Delete</a></td>
             </tr>
             @endforeach
         </tbody>

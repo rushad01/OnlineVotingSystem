@@ -48,8 +48,11 @@ class AdminController extends Controller
         return redirect('/admin/citizens')->with('success','Citizen Updated Successfully.');
     }
 
-    public function destroyCitizen(){
-
+    public function destroyCitizen($id)
+    {
+        $citizen = User::find($id);
+        $citizen->delete();
+        return redirect('/admin/citizens')->with('success','Citizen Data Deleted');
     }
 
     public function adminCandidates(){
@@ -79,8 +82,10 @@ class AdminController extends Controller
         return redirect('/admin/candidates')->with('success','Candidate Information Updated');
     }
 
-    public function destroyCandidate()
+    public function destroyCandidate($id)
     {
-
+        $candidate = User::find($id);
+        $candidate->delete();
+        return redirect('/admin/candidates')->with('success','Candidate Data Deleted');
     }
 }

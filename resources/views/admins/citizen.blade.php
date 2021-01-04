@@ -40,7 +40,9 @@
                 <td>{{$citizen->email}}</td>
                 <td>{{$citizen->birthday->format('j F, Y')}}</td>
                 <td><a href="/admin/citizens/{{$citizen->id}}/editCitizen" class="btn btn-secondary btn-sm">Edit</a>
-                    {!!Form::open() !!}<a href="#" class="btn btn-danger btn-sm ml-1">Delete</a>
+                    {!!Form::open(['action' => ['App\Http\Controllers\AdminController@destroyCitizen',$citizen->id],'method' => 'POST']) !!}
+                    {{Form::hidden('_method','DELETE')}}
+                    {{Form::submit('Delete',['class' => 'btn btn-danger btn-sm'])}}
                     {!!Form::close() !!}</td>
             </tr>
             @endforeach

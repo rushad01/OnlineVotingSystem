@@ -31,8 +31,10 @@ Route::prefix('/admin')->group(function(){
     Route::get('/',[AdminController::class,'profile']);
     Route::get('/citizens/{id}/editCitizen',[AdminController::class,'editCitizen']);
     Route::put('/citizens/update/{id}',[AdminController::class,'updateCitizen']);
-    Route::get('/candidate/{id}/editCandidate',[AdminController::class,'editCandidate']);
-    Route::put('/citizens/update/{id}',[AdminController::class,'updateCandidate']);
+    Route::delete('/citizens/delete/{id}',[AdminController::class,'destroyCitizen']);
+    Route::get('/candidates/{id}/editCandidate',[AdminController::class,'editCandidate']);
+    Route::put('/candidates/update/{id}',[AdminController::class,'updateCandidate']);
+    Route::delete('/candidates/delete/{id}',[AdminController::class,'deleteCandidate']);
 });
     
 // Routes for Candidate Pages
